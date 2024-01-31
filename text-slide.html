@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            margin: 100px auto;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .wrap span {
+            /* display: inline-block; */
+            white-space: nowrap;
+            font-size: 60px;
+            animation: an 3s infinite linear;
+        }
+
+        .wrap span:nth-child(even) {
+            color: transparent;
+            -webkit-text-stroke: 1px tomato;
+        }
+
+        @keyframes an {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <span>Lorem ipsum dolor sit.</span>
+        <span>Lorem ipsum dolor sit.</span>
+        <span>Lorem ipsum dolor sit.</span>
+        <span>Lorem ipsum dolor sit.</span>
+    </div>
+</body>
+
+</html>

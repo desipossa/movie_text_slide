@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 동영상 iframe으로 가져오기</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/jquery.mb.YTPlayer.min.css">
+
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery.mb.YTPlayer.min.js"></script>
+    <style>
+        .main_visual {
+            margin: 100px 0 0 0;
+            width: 50vh;
+            height: 50vh;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            filter: grayscale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main_visual">
+        <div id="bgndVideo" class="player"></div>
+    </div>
+
+    <button class="play">
+        play
+    </button>
+
+    <button class="pause">
+        pause
+    </button>
+
+
+
+    <script>
+        $(function () {
+            $('#bgndVideo').YTPlayer({
+                videoURL: 'BsekcY04xvQ',
+                containment: '.main_visual',
+                showControls: false,
+                playOnlyIfVisible: true,
+            });
+
+            $('.pause').on('click', function () {
+                $('#bgndVideo').YTPPause();
+            });
+            $('.play').on('click', function () {
+                $('#bgndVideo').YTPPlay();
+            });
+        });
+    </script>
+</body>
+
+</html>
